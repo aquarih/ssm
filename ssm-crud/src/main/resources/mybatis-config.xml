@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--設置駝峰-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--延遲加載-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+    </settings>
+
+    <!--設置類型別名-->
+    <typeAliases>
+        <package name="crud/bean"/>
+    </typeAliases>
+    
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--分頁參數合理化-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+</configuration>
